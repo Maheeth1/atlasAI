@@ -4,9 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "dev": "electron ."
+    "dev": "electron .",
+    "build": "echo desktop build",
+    "lint": "echo desktop lint",
+    "test": "echo desktop test"
   },
   "keywords": [],
   "author": "",
