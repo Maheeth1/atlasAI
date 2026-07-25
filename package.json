@@ -1,0 +1,8 @@
+{
+  "name": "atlasai",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
