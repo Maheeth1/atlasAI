@@ -20,6 +20,18 @@ Done:
 
 ✅ Ignoring node_modules, dist, .env, db files
 
+## Phase 1: UI Shell
+
+Done:
+
+✅ Simple UI Shell (React + Tailwind)
+
+✅ Full Screen
+
+✅ Centered "AtlasAI" Text
+
+✅ Ignoring node_modules, dist, .env, db files
+
 To Run:
 
 cd apps/backend
