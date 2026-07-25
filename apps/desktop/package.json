@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "dev": "electron .",
+    "dev": "tsx watch main.ts",
     "build": "echo desktop build",
     "lint": "echo desktop lint",
     "test": "echo desktop test"
@@ -14,6 +14,10 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "electron": "^43.2.0"
+    "@types/electron": "^1.4.38",
+    "@types/node": "^26.1.1",
+    "electron": "^43.2.0",
+    "tsx": "^4.23.1",
+    "typescript": "^6.0.3"
   }
 }
