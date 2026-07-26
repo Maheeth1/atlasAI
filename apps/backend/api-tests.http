@@ -1,0 +1,16 @@
+### Test Backend Health / Database Status
+GET http://localhost:5000/database
+Content-Type: application/json
+
+### Get All Settings
+GET http://localhost:5000/settings
+Content-Type: application/json
+
+### Update a Setting
+POST http://localhost:5000/settings
+Content-Type: application/json
+
+{
+    "key": "theme",
+    "value": "dark"
+}

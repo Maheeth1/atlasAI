@@ -1,0 +1,48 @@
+export const schema = `
+PRAGMA journal_mode = WAL;
+PRAGMA foreign_keys = ON;
+
+CREATE TABLE IF NOT EXISTS settings(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    key TEXT UNIQUE NOT NULL,
+    value TEXT NOT NULL,
+    updated_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS plugins(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT UNIQUE,
+    version TEXT,
+    enabled INTEGER DEFAULT 1,
+    installed_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS indexed_folders(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    path TEXT UNIQUE,
+    enabled INTEGER DEFAULT 1,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS jobs(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    type TEXT,
+    status TEXT,
+    progress INTEGER DEFAULT 0,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS history(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    prompt TEXT,
+    response TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS models(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT UNIQUE,
+    provider TEXT,
+    active INTEGER DEFAULT 0
+);
+`;

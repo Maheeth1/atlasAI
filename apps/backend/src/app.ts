@@ -1,12 +1,19 @@
 import express from "express";
 import cors from "cors";
-import healthRoute from "./routes/health.route";
+import healthRoute from "./api/health";
+import settingsRoute from "./api/settings";
+import databaseRoute from "./api/database";
 
 const app = express();
 
 app.use(cors());
+
 app.use(express.json());
 
-app.use("/api/health", healthRoute);
+app.use("/health", healthRoute);
+
+app.use("/settings", settingsRoute);
+
+app.use("/database", databaseRoute);
 
 export default app;
