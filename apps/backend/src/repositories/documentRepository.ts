@@ -23,7 +23,17 @@ interface DocumentRow {
     indexed_at: string | null;
 }
 
-interface SearchRow extends DocumentRow {
+interface SearchRow {
+    document_id: string;
+    filename: string;
+    path: string;
+    extension: string;
+    size: number;
+    modified_at: string;
+    hash: string;
+    status: DocumentStatus;
+    error: string | null;
+    indexed_at: string | null;
     chunk_id: string;
     chunk_index: number;
     content: string;

@@ -32,7 +32,7 @@ const schema = z.object({
 
     CHROMA_COLLECTION: z.string().trim().min(1).default("atlasai_chunks"),
 
-    CHROMA_ENABLED: z.stringbool().default(true),
+    CHROMA_ENABLED: z.coerce.boolean().default(true),
 
     MCP_ALLOWED_ROOTS: z.string().default(""),
 

@@ -6,11 +6,18 @@ import { database } from "./database/database";
 import "./services/AppEvents";
 import { samplePlugin } from "./plugins/samplePlugin";
 import { pluginLoader } from "./plugins/PluginLoader";
+import { chromaDB } from "./database/chroma";
 
 let isShuttingDown = false;
 
 async function start() {
     await pluginLoader.load(samplePlugin);
+    
+    try {
+        await chromaDB.initialize();
+    } catch (error) {
+        backendLogger.warn("ChromaDB failed to initialize. Application will continue without vector search.");
+    }
 
     const server = app.listen(env.PORT, () => {
         backendLogger.info(

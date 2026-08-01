@@ -1,0 +1,14 @@
+{
+  "name": "@atlasai/tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/supertest": "^6.0.2",
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.8",
+    "backend": "*"
+  }
+}
